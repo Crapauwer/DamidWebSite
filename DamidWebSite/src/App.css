@@ -1,0 +1,66 @@
+.body{
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100vw;
+  height: 5000px;
+  margin: 0 auto;
+  
+}
+.BackgroundAbsolute{
+  position: fixed;
+  
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  content:url("./src/assets/fondsite.png");
+}
+
+.TitleContainer{
+  display: flex;
+  width: 99vw;
+  background: rgb(255,116,0);
+background: -moz-linear-gradient(90deg, rgba(255,116,0,1) 0%, rgba(255,63,0,1) 100%);
+background: -webkit-linear-gradient(90deg, rgba(255,116,0,1) 0%, rgba(255,63,0,1) 100%);
+background: linear-gradient(90deg, rgba(255,116,0,1) 0%, rgba(255,63,0,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff7400",endColorstr="#ff3f00",GradientType=1);
+  height: 600px;
+  box-shadow: 15px 4px 16px rgba(0, 0, 0, 0.5);
+  box-shadow: -15px 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.TitleDesign{
+
+}
+.ContainerLogo{
+  display: flex;
+  max-width: 65%;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.TitleLogo{
+  display: block;
+  content:url("./src/assets/NomDuJeuLogo.png");
+  max-width: 100%;
+  max-height: 100%; 
+  object-fit: contain;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
