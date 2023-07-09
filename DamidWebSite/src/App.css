@@ -4,30 +4,137 @@
 
 #root {
   width: 100vw;
-  height: 5000px;
   margin: 0 auto;
   
 }
 .BackgroundAbsolute{
   position: fixed;
-  
+  content:url("./src/assets/fondsite.png");
   width: 100vw;
   height: 100vh;
+  z-index: -2;
+
+}
+.SousBackground{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(29, 36, 84, 0.484);
   z-index: -1;
-  content:url("./src/assets/fondsite.png");
+}
+
+.Main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .TitleContainer{
+  margin-top: 5vh;
+  height: 90vh;
+  width: 90%;
+  margin-bottom: 5vh;
+}
+
+.TitleSousContainer{
   display: flex;
-  width: 99vw;
+  width: 100%;
+  height: 100%;
+  
   background: rgb(255,116,0);
 background: -moz-linear-gradient(90deg, rgba(255,116,0,1) 0%, rgba(255,63,0,1) 100%);
 background: -webkit-linear-gradient(90deg, rgba(255,116,0,1) 0%, rgba(255,63,0,1) 100%);
 background: linear-gradient(90deg, rgba(255,116,0,1) 0%, rgba(255,63,0,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff7400",endColorstr="#ff3f00",GradientType=1);
-  height: 600px;
-  box-shadow: 15px 4px 16px rgba(0, 0, 0, 0.5);
-  box-shadow: -15px 4px 16px rgba(0, 0, 0, 0.5);
+  
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 0 3px #ffffff;
+}
+.TitleCatchy{
+  display: flex;
+  font-size: 10vh;
+  align-items: center;
+  
+}
+
+.CatchyContainer{
+  display:flex;
+  height: 90vh;
+  width: 90%;
+margin-bottom: 2vh;
+margin-top: 2vh;
+box-shadow: inset 0 0 0 3px #ffffff;
+
+justify-content: center;
+  background: rgb(246, 174, 116);
+  
+
+}
+
+.CatchySousContainer{
+  display:flex;
+  height: 100%;
+  width: 100%; 
+box-shadow: inset 0 0 0 3px #ffffff;
+
+justify-content: center;
+  background: rgb(246, 174, 116);
+  
+
+}
+#title{
+  margin-top:5vh;
+  
+}
+
+.Container{
+  display:flex;
+  height: 90vh;
+  width: 90%;
+margin-bottom: 5vh;
+margin-top: 2vh;
+box-shadow: inset 0 0 0 3px #ffffff;
+
+justify-content: center;
+  background: rgb(246, 174, 116);
+  
+}
+.AgentsSousContainer{
+  display:flex;
+  height: 100%;
+  width: 100%; 
+box-shadow: inset 0 0 0 3px #ffffff;
+
+justify-content: center;
+  background: rgb(246, 174, 116);
+  
+
+}
+
+
+.SkinAccessoireSous{
+  display:flex;
+  height: 100%;
+  width: 100%; 
+box-shadow: inset 0 0 0 3px #ffffff;
+
+justify-content: center;
+  background: rgb(246, 174, 116);
+  
+
+}
+.SousCrossPlatform{
+  display:flex;
+  height: 100%;
+  width: 100%; 
+box-shadow: inset 0 0 0 3px #ffffff;
+
+justify-content: center;
+  background: rgb(246, 174, 116);
+  
 }
 
 .TitleDesign{
@@ -35,7 +142,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff7400",endCo
 }
 .ContainerLogo{
   display: flex;
-  max-width: 65%;
+  max-width: 85%;
   max-height: 100%;
   display: flex;
   justify-content: center;
@@ -44,7 +151,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff7400",endCo
 
 .TitleLogo{
   display: block;
-  content:url("./src/assets/NomDuJeuLogo.png");
+  content:url("./src/assets/NomDuJeuLogo1.png");
   max-width: 100%;
   max-height: 100%; 
   object-fit: contain;
