@@ -44,7 +44,7 @@ const changeShadow = (X,Y) => {
   }
   //console.log(y)
   setShadow({
-    boxShadow: `${t}px ${y+13}px ${7}px rgba(0,0,0,0.7)`,
+    boxShadow: `${t}px ${13+y}px ${7}px rgba(0,0,0,0.7)`,
     // Add any other style properties you want to change
   });
 };
@@ -62,7 +62,7 @@ const chnageSoleil = (X) => {
   var j = y*0.6+0.2
  
   setSoleil({
-    backgroundColor:`rgba(29, 36, 84, ${j})`,
+    backgroundColor:`rgba(181, 89, 15, ${j})`,
   });
 };
     
@@ -94,17 +94,21 @@ const chnageSoleil = (X) => {
       </div>
       <div className='Container' id='agents' style={divShadow}>
       <div className='AgentsSousContainer'>
-      <div className='MIDS'></div>
+      <div className='MIDS'>A LOT OF MIDS AND SPELLS</div>
       
       </div>
       </div>
       <div className='Container' id='skin' style={divShadow}>
       <div className='SkinAccessoireSous'>
+        LOOT AMAZING SKIN
       </div>
       </div>
       <div className='Container' id='cross' style={divShadow}>
       <div className='SousCrossPlatform' >
-
+        <div className='PCandPhone'>
+          <div className='PC'></div>
+          <div className='Phone'></div>
+        </div>
     </div>  
       </div>
 
