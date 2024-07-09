@@ -10,11 +10,7 @@ const NavBar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-
-        setCurrentScrollPosition(window.scrollY);
-        console.log("scroll");
-        console.log(window.scrollY);
-        
+      setCurrentScrollPosition(window.scrollY);        
     }
     window.addEventListener('scroll', handleScroll, { passive: true });
 
@@ -28,19 +24,15 @@ const NavBar = () => {
         
       const diff = targetScrollPosition - currentScrollPosition;
       const newPosition = window.scrollY;
-      
-      if (Math.abs(diff) < 0.1) {
-        setCurrentScrollPosition(targetScrollPosition);
-        
-      } else {
-        const newPosition = currentScrollPosition + diff * 0.1;
-        setCurrentScrollPosition(newPosition);
-        /* const height = `calc(100vh - ${currentScrollPosition * 85}vh)`;
-        const backgroundColor = `rgba(255, 255, 255, ${0.5 + currentScrollPosition * 0.5})`;
-        navbarRef.current.style.height = height;
-        navbarRef.current.style.backgroundColor = backgroundColor; */
-        
-      }
+      setCurrentScrollPosition(prev => {
+        const diff = window.scrollY - prev;
+        if (Math.abs(diff) < 0.1) {
+          cancelAnimationFrame(animationRef.current);
+          return window.scrollY;
+        } else {
+          return prev + diff * 0.1;
+        }
+      });
       animationRef.current = requestAnimationFrame(animate);
     };
 
@@ -52,11 +44,13 @@ const NavBar = () => {
   }, [targetScrollPosition, currentScrollPosition]);
 
   useEffect(() => {
-    const transitionPoint = 300;
+    const transitionPoint = 10;
     const progress = Math.min(currentScrollPosition / transitionPoint, 1);
     
     if (navbarRef.current) {
-      navbarRef.current.style.height = `${100-progress*100}vh`;
+      navbarRef.current.style.setProperty('--scroll-progress', progress);
+      //navbarRef.current.style.height = `${100-progress*100}vh`;
+      console.log(progress);
     }
 
     // Contrôle de l'animation SVG
@@ -68,7 +62,7 @@ const NavBar = () => {
       });
     }
     ;
-    console.log("value :");  
+     
   }, [currentScrollPosition]);
 
   const transitionPoint = 300;
