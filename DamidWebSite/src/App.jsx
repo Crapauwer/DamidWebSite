@@ -1,4 +1,5 @@
-import { useState,useEffect } from 'react'
+import { useState,useEffect,useRef } from 'react'
+import NavBar from './NavBar';
 import './App.css'
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
   const ShadowX =50;
   const ShadowY = 50;
   const MaxScroll =document.documentElement.scrollHeight- window.innerHeight;
-  let animationFrameId;
+  const animationFrameId = useRef(null);
     var TitleContainer = document.getElementById('title')
     var CatchyContainer = document.getElementsByClassName('catchy')
   var AgentsContainer = document.getElementsByClassName('agents')
@@ -23,9 +24,10 @@ function App() {
     var PourcentageScrollX =(((window.scrollY*100)/MaxScroll)/100)*ShadowX
     var PourcentageScrollY =(((window.scrollY*100)/MaxScroll)/100)*ShadowY
     changeShadow(PourcentageScrollX,PourcentageScrollY)
-    chnageSoleil((((window.scrollY*100)/MaxScroll)/100))
+    changeSoleil((((window.scrollY*100)/MaxScroll)/100))
     
-    animationFrameId = requestAnimationFrame(updateFrame);
+    animationFrameId.current = requestAnimationFrame(updateFrame);
+    //console.log("UPDATE");
   };
   updateFrame();
   
@@ -49,7 +51,30 @@ const changeShadow = (X,Y) => {
   });
 };
 
-const chnageSoleil = (X) => {
+function changeURL(newPath) {
+  const newURL = window.location.origin + newPath;
+  window.history.pushState({}, '', newURL);
+  updateFavicon();
+  
+}
+
+function updateFavicon() {
+  const path = window.location.pathname;
+  const faviconElement = document.getElementById('favicon');
+  
+  if (path.includes('/object')) {
+    faviconElement.href = '/pingdifflogoBlanc.png';
+  } else if (path.includes('/another-path')) {
+    faviconElement.href = '/pingdifflogoBlanc.png';
+  } else {
+    faviconElement.href = '/pingdifflogoBlanc.png';
+  }
+}
+
+// Usage
+//changeURL('/new-path');
+
+const changeSoleil = (X) => {
   if(X >= 0.5){
     var t = 1-X
   }else{
@@ -70,6 +95,7 @@ const chnageSoleil = (X) => {
 
   return (
     <>
+    <NavBar />
     <div className='Main'>
       <div className='BackgroundAbsolute'>
         

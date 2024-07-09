@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="LOGO" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13267.16 13218.01" width="2em" height="2em">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 80px;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M5454.37,5866.71h184.77c129.91,0,235.23,106.56,235.23,238s-105.31,238-235.23,238h-183.13"/>
+  <path class="cls-1" d="M4833.5,6601.34l1.64-258.64h183.13c129.91,0,235.23-106.56,235.23-238s-105.31-238-235.23-238h-184.77"/>
+</svg>
