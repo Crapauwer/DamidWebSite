@@ -1,0 +1,207 @@
+.body{
+    overflow-x: hidden;
+  }
+  
+  #root {
+    width: 100vw;
+    margin: 0 auto;
+    
+  }
+  .BackgroundAbsolute{
+    position: fixed;
+    content:url("./src/assets/fondsite.png");
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+  
+  }
+  .SousBackground{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(181, 89, 15);
+    z-index: -1;
+  }
+  
+  .Main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .TitleContainer{
+    margin-top: 5vh;
+    height: 90vh;
+    width: 90%;
+    margin-bottom: 5vh;
+  }
+  .MIDS{
+    display: flex;
+    font-size: 10vh;
+    align-items: center;
+  justify-content: center;
+  }
+  
+  .TitleSousContainer{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    
+    background: rgb(255,116,0);
+  background: -moz-linear-gradient(90deg, rgba(255,116,0,1) 0%, rgba(255,63,0,1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(255,116,0,1) 0%, rgba(255,63,0,1) 100%);
+  background: linear-gradient(90deg, rgba(255,116,0,1) 0%, rgba(255,63,0,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff7400",endColorstr="#ff3f00",GradientType=1);
+    
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 0 3px #ffffff;
+  }
+  .TitleCatchy{
+    display: flex;
+    font-size: 10vh;
+    align-items: center;
+    
+  }
+  
+  .CatchyContainer{
+    display:flex;
+    height: 90vh;
+    width: 90%;
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+  box-shadow: inset 0 0 0 3px #ffffff;
+  
+  justify-content: center;
+    background: rgb(246, 174, 116);
+    
+  
+  }
+  
+  .CatchySousContainer{
+    display:flex;
+    height: 100%;
+    width: 100%; 
+  box-shadow: inset 0 0 0 3px #ffffff;
+  
+  justify-content: center;
+    background: rgb(246, 174, 116);
+    
+  
+  }
+  #title{
+    margin-top:5vh;
+    
+  }
+  
+  .Container{
+    display:flex;
+    height: 90vh;
+    width: 90%;
+  margin-bottom: 5vh;
+  margin-top: 2vh;
+  box-shadow: inset 0 0 0 3px #ffffff;
+  
+  justify-content: center;
+    background: rgb(246, 174, 116);
+    
+  }
+  .AgentsSousContainer{
+    display:flex;
+    height: 100%;
+    width: 100%; 
+  box-shadow: inset 0 0 0 3px #ffffff;
+  
+  justify-content: center;
+    background: rgb(246, 174, 116);
+    
+  
+  }
+  
+  
+  .SkinAccessoireSous{
+    display:flex;
+    height: 100%;
+    width: 100%; 
+  box-shadow: inset 0 0 0 3px #ffffff;
+  font-size: 10vh;
+    align-items: center;
+  justify-content: center;
+    background: rgb(246, 174, 116);
+    
+  
+  }
+  .SousCrossPlatform{
+    display:flex;
+    height: 100%;
+    width: 100%; 
+  box-shadow: inset 0 0 0 3px #ffffff;
+  font-size: 10vh;
+    align-items: center;
+  justify-content: center;
+  justify-content: center;
+    background: rgb(246, 174, 116);
+    
+  }
+  
+  .PCandPhone{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 40%;
+    height: 100%; 
+    z-index: 1;
+  }
+  .PC{
+  display: flex;
+    content:url("./src/assets/Computeur.png");
+    width: 100%;
+    height: 100%; 
+    object-fit: contain;
+  }
+  
+  .Phone{
+    display: flex;
+    content:url("./src/assets/Phone.png");
+   width: 100%;
+    height: 100%; 
+    object-fit: contain;
+  }
+  
+  .TitleDesign{
+  
+  }
+  .ContainerLogo{
+    display: flex;
+    max-width: 85%;
+    max-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .TitleLogo{
+    display: block;
+    content:url("./src/assets/NomDuJeuLogo1.png");
+    max-width: 100%;
+    max-height: 100%; 
+    object-fit: contain;
+  }
+  
+  @keyframes logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    a:nth-of-type(2) .logo {
+      animation: logo-spin infinite 20s linear;
+    }
+  }
+  

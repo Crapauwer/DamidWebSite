@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './NavBar.css';
 
-const NavBar = () => {
+const NavBar = ({ TransiPoint }) => {
   const [targetScrollPosition, setTargetScrollPosition] = useState(0);
   const [currentScrollPosition, setCurrentScrollPosition] = useState(0);
   const animationRef = useRef(null);
@@ -44,7 +44,7 @@ const NavBar = () => {
   }, [targetScrollPosition, currentScrollPosition]);
 
   useEffect(() => {
-    const transitionPoint = 10;
+    const transitionPoint = TransiPoint;
     const progress = Math.min(currentScrollPosition / transitionPoint, 1);
     
     if (navbarRef.current) {
