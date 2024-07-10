@@ -1,11 +1,11 @@
 import { useState,useEffect,useRef } from 'react'
-import NavBar from './NavBar';
+
 import Damid from './Damid';
 import HomePage from './HomePage';
 import './App.css'
 
 function App() {
-const TransiPoint = 1000;
+const TransiPoint = 400;
 
 function changeURL(newPath) {
   const newURL = window.location.origin + newPath;
@@ -32,7 +32,6 @@ function updateFavicon() {
 
   return (
     <>
-    <NavBar TransiPoint={TransiPoint}/>
     <HomePage TransiPoint={TransiPoint}/>
       
       

@@ -1,14 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
+import Anim from './Anim.jsx';
+import VirtualScroll from 'virtual-scroll'
 import './NavBar.css';
 
-const NavBar = ({ TransiPoint }) => {
+const NavBar = () => {
   const [targetScrollPosition, setTargetScrollPosition] = useState(0);
   const [currentScrollPosition, setCurrentScrollPosition] = useState(0);
   const animationRef = useRef(null);
   const navbarRef = useRef(null);
   const svgRef = useRef(null);
 
-  useEffect(() => {
+  /* useEffect(() => {
     const handleScroll = () => {
       setCurrentScrollPosition(window.scrollY);        
     }
@@ -17,9 +19,9 @@ const NavBar = ({ TransiPoint }) => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, []); */
 
-  useEffect(() => {
+  /* useEffect(() => {
     const animate = () => {
         
       const diff = targetScrollPosition - currentScrollPosition;
@@ -42,28 +44,20 @@ const NavBar = ({ TransiPoint }) => {
       cancelAnimationFrame(animationRef.current);
     };
   }, [targetScrollPosition, currentScrollPosition]);
-
-  useEffect(() => {
+ */
+  /* useEffect(() => {
     const transitionPoint = TransiPoint;
     const progress = Math.min(currentScrollPosition / transitionPoint, 1);
     
     if (navbarRef.current) {
       navbarRef.current.style.setProperty('--scroll-progress', progress);
       //navbarRef.current.style.height = `${100-progress*100}vh`;
-      console.log(progress);
+      //console.log(progress);
     }
 
-    // Contrôle de l'animation SVG
-    if (svgRef.current) {
-      const svgElement = svgRef.current;
-      const animationElements = svgElement.querySelectorAll('animate, animateTransform, animateMotion');
-      animationElements.forEach(animation => {
-        animation.setAttribute('end', `${progress * 100}%`);
-      });
-    }
     ;
      
-  }, [currentScrollPosition]);
+  }, [currentScrollPosition]); */
 
   const transitionPoint = 300;
   const progress = Math.min(currentScrollPosition / transitionPoint, 1);
@@ -76,26 +70,16 @@ const NavBar = ({ TransiPoint }) => {
     >
       <div className="navbar-content">
         <div className="svg-container" ref={svgRef}>
-          {/* Insérez votre SVG ici */}
-          <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="40" stroke="white" strokeWidth="4" fill="none">
-              <animate 
-                attributeName="r" 
-                from="0" to="40" 
-                dur="2s" 
-                begin="0s" 
-                fill="freeze" 
-              />
-            </circle>
-          </svg>
+        <Anim/>
         </div>
-        <h1>Logo</h1>
+        
+        {/* <h1>Logo</h1>
         <ul>
           <li><a href="#home">{currentScrollPosition}</a></li>
           <li><a href="#about">À propos</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#contact">Contact</a></li>
-        </ul>
+        </ul> */}
       </div>
     </nav>
   );

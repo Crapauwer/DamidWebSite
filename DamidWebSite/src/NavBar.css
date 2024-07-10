@@ -5,18 +5,19 @@
     width: 100%;
     z-index: 1000;
     overflow: hidden;
-    transition: all 0.5s linear infinite;
-    height: calc(100vh - var(--scroll-progress) * 90vh);
-    background-color: rgba(0, 0, 0, 1);
+    transition: all 0.5s ease-in-out infinite;
+    /* height: calc(100vh - var(--scroll-progress) * 85vh); */
+    height: 15vh;
+    background-color: rgb(0, 0, 0);
   }
   
   .navbar-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    justify-content: center;
     height: 100%;
-    opacity: calc(1 - var(--scroll-progress) * 0.5);
+    /* opacity: calc(1 - var(--scroll-progress) * 0.5); */
   }
   
   .navbar ul {
@@ -26,6 +27,7 @@
   
   .navbar ul li {
     margin-left: 1rem;
+    margin-right: 1rem;
   }
   
   .navbar a {
@@ -54,13 +56,11 @@
   }
 
   .svg-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 50%;
     transition: all 0.3s ease;
-  }
-  
-  .fullscreen .svg-container {
-    transform: translate(-50%, -50%) scale(2);
   }
