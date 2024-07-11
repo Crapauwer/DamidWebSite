@@ -10,7 +10,7 @@ function HomePage({ TransiPoint }) {
   var scrollValue = 0;
   var CurrentScrollValue = 0;
   var scrollTimeout = 0;
-
+/* 
   const scroller = new VirtualScroll()
 scroller.on(event => {
 	if (event.deltaY > 0) {
@@ -30,7 +30,7 @@ scroller.on(event => {
 })
 document.addEventListener('touchmove', function(e) { 
   e.preventDefault(); 
-});
+}); */
 
   function getScrollToVhRatio() {
     // Hauteur totale de la fenêtre en pixels
@@ -84,7 +84,7 @@ document.addEventListener('touchmove', function(e) {
     
 
     
-    /* const scrollPosition = window.scrollY;
+     const scrollPosition = window.scrollY;
     const triggerPoint = TransiPoint;
 
     console.log("ISCROLLING");
@@ -99,10 +99,10 @@ document.addEventListener('touchmove', function(e) {
         "--pos-sticky",
         pixelsToVh(scrollPosition)
       );
-    } */
+    } 
   };
 
-  /* useEffect(() => {
+   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -114,11 +114,11 @@ document.addEventListener('touchmove', function(e) {
     return () => {
       window.removeEventListener("wheel", handleWheel);
     };
-  }, []); */
+  }, []); 
 
   return (
     <nav>
-      <NavBar/>
+      <NavBar TransiPoint={TransiPoint}/>
       <div className="container" ref={body}>
         {/* <div className="black-background"></div> */}
         <div
@@ -126,8 +126,9 @@ document.addEventListener('touchmove', function(e) {
           ref={DivPrev}
         ></div>
         <div className={`content ${isSticky ? "sticky" : ""}`}>
-          <h1>Your content goes here</h1>
-          <p>This div starts 15vh from the top of the page.</p>
+        <div className="image-container">
+    <img src="./src/assets/logo.png"/>
+  </div>
         </div>
       </div>
     </nav>

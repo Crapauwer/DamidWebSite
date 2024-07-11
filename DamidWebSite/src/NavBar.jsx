@@ -3,14 +3,14 @@ import Anim from './Anim.jsx';
 import VirtualScroll from 'virtual-scroll'
 import './NavBar.css';
 
-const NavBar = () => {
+const NavBar = ({TransiPoint}) => {
   const [targetScrollPosition, setTargetScrollPosition] = useState(0);
   const [currentScrollPosition, setCurrentScrollPosition] = useState(0);
   const animationRef = useRef(null);
   const navbarRef = useRef(null);
   const svgRef = useRef(null);
 
-  /* useEffect(() => {
+   useEffect(() => {
     const handleScroll = () => {
       setCurrentScrollPosition(window.scrollY);        
     }
@@ -19,9 +19,9 @@ const NavBar = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []); */
+  }, []); 
 
-  /* useEffect(() => {
+   useEffect(() => {
     const animate = () => {
         
       const diff = targetScrollPosition - currentScrollPosition;
@@ -44,8 +44,7 @@ const NavBar = () => {
       cancelAnimationFrame(animationRef.current);
     };
   }, [targetScrollPosition, currentScrollPosition]);
- */
-  /* useEffect(() => {
+ useEffect(() => {
     const transitionPoint = TransiPoint;
     const progress = Math.min(currentScrollPosition / transitionPoint, 1);
     
@@ -57,7 +56,7 @@ const NavBar = () => {
 
     ;
      
-  }, [currentScrollPosition]); */
+  }, [currentScrollPosition]); 
 
   const transitionPoint = 300;
   const progress = Math.min(currentScrollPosition / transitionPoint, 1);
