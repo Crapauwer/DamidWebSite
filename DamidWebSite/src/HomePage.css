@@ -1,47 +1,33 @@
+@font-face {
+  font-family: 'Mont';
+  src: url('./assets/Montserrat-VariableFont_wght.ttf') format('truetype');
+  /* Add additional src lines for other font formats if available */
+  font-weight: normal;
+  font-style: normal;
+}
+
 body, html {
     margin: 0;
     padding: 0;
-    height: 100%;
+    height: 4000;
     scroll-behavior: smooth;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
-  
-  .container {
-    min-height: 500vh;
-  }
-  
-  .black-background {
-    position: fixed;
-    top: 0;
-    left: 0;
+  .Sentance{
+    position: relative;
+    display: flex;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
     background-color: black;
-    z-index: -3;
   }
 
-  .hide-scrollbar {
-    
-  }
-  
   body, html::-webkit-scrollbar {
     display: none;  /* Chrome, Safari, and Opera */
   }
   
-
-  .preDiv {
-    position: relative;
-    display: flex;
-    width: 100%;
-    height: calc(var(--pos-sticky) * 70px);
-    z-index: 0;
-    background-color: rgb(255, 2, 2);
-  }
-
-  .preDiv.sticky {
-    height: 15vh;
-  }
 
   .content {
     display: flex;
@@ -52,7 +38,31 @@ body, html {
     align-items: center;
     justify-content: center;
     z-index: 0;
-    background-color: rgb(153, 153, 153);
+    background: linear-gradient(to right, #ffbb00, #ff1100);
+    filter: grayscale(100%);
+    transition: all 0.4s ease-in-out;
+    transform-origin: top;
+    overflow: hidden;
+  }
+
+  .sous-body{
+    display: flex;
+    position: sticky;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transform-origin: top;
+    width: 100%;
+
+    top: 0;
+  }
+  .damid{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
     transition: all 0.4s ease-in-out;
     transform-origin: top;
     overflow: hidden;
@@ -79,15 +89,12 @@ body, html {
 
   .content:hover {
     transform: scaleY(1.4);
+    filter: grayscale(0%);
   }
 
   .content:hover .image-container img {
     transform: scaleY(0.714);
     filter: grayscale(0%);
   }
-  
-  .content.sticky {
-    position: fixed;
-    top:15vh;
-  }
+
   

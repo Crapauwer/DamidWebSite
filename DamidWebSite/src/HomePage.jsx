@@ -5,6 +5,7 @@ import "./HomePage.css";
 
 function HomePage({ TransiPoint }) {
   const [isSticky, setIsSticky] = useState(Boolean);
+  const [offsetSousBody, setOffset] = useState(0);
   const DivPrev = useRef(null);
   const body = useRef(null);
   var scrollValue = 0;
@@ -88,18 +89,12 @@ document.addEventListener('touchmove', function(e) {
     const triggerPoint = TransiPoint;
 
     console.log("ISCROLLING");
-    setIsSticky(scrollPosition < triggerPoint);
     if (scrollPosition < triggerPoint) {
-      setIsSticky(true);
+      
     } else {
       setIsSticky(false);
     }
-    if (scrollPosition < triggerPoint) {
-      DivPrev.current.style.setProperty(
-        "--pos-sticky",
-        pixelsToVh(scrollPosition)
-      );
-    } 
+
   };
 
    useEffect(() => {
@@ -118,18 +113,19 @@ document.addEventListener('touchmove', function(e) {
 
   return (
     <nav>
+      <div className="sous-body" ref={body}>
       <NavBar TransiPoint={TransiPoint}/>
-      <div className="container" ref={body}>
-        {/* <div className="black-background"></div> */}
-        <div
-          className={`preDiv ${isSticky ? "sticky" : ""}`}
-          ref={DivPrev}
-        ></div>
-        <div className={`content ${isSticky ? "sticky" : ""}`}>
+      <div className="Sentance" ref={body}>
+      Free and competitive games for everyone
+      </div>
+      <div className="damid">
+        <div className={`content`}>
         <div className="image-container">
     <img src="./src/assets/logo.png"/>
   </div>
         </div>
+      </div>
+      <div className="footer" ref={body}></div>
       </div>
     </nav>
   );

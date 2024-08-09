@@ -65,7 +65,7 @@ const NavBar = ({TransiPoint}) => {
   return (
     <nav 
       ref={navbarRef}
-      className={`navbar ${isFullScreen ? 'fullscreen' : ''}`}
+      className={`navbar`}
     >
       <div className="navbar-content">
         <div className="svg-container" ref={svgRef}>
